@@ -16,7 +16,3 @@ app1.controller('badEmotions',function ($scope) {
 
 });
 
-app1.controller('greatController',function($scope){
-	var great = ['bye','tata','see you soon','goodbye'];
-	$scope.get = great[Math.floor((Math.random() * 4))];
-});
