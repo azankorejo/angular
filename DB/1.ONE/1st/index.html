@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app='app1' ng-init="person =  {fname:'azan',lname:'korejo'}; capitals = [{city:'Hyderabad',state:'Sindh'},{city:'Lahore',state :'Punjab'}]">
+<head>
+	<title>Angular Js Turtorial</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller='controllerOne'>
+	<span>Values :</span>
+	<input type="text" ng-model='first'>
+	<input type="text" ng-model='second'>
+	<button ng-click='updateFunction()'>Sum</button>
+	<br>
+	<br>
+	<!-- ANSWER TO THE ABOVE FUNCTION -->
+	{{calculation}}
+	<br>
+	<!-- CUSTOM ARTHMETIC OPERATIONS -->
+	<p>5 + 5 = {{5+5}}</p>
+	<br>
+	<!-- Dynamic Update of Value -->
+	<p>Your First Value Is = {{first}}</p>
+	<!-- same thing as above but in different way -->
+	<p>Your Second Value Is = <span data-ng-bind='second'></span></p>
+
+	<!-- Accesssing the ng-init variables -->
+	<p>{{person.fname.toUpperCase() + ' ' + person.lname}} And You Entered {{first + ' and ' + second }}</p>
+
+	<!-- ACCESSING THE JSON DATA -->
+	<ul>
+		<li ng-repeat='capital in capitals'>{{capital.city}} is capital of {{capital.state}}</li>
+	</ul>
+</div>
+
+
+<script type="text/javascript" src="angular.js"></script>
+</body>
+</html>

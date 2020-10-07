@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app='app1' ng-clock >
+<head>
+	<title>Angular Js Turtorial 2</title>
+	<style type="text/css">
+		/* NG-CLOCK IS USED FOR THE CURLY BRACKETS SHOWING WHEN REFRESHING TO NOT DISPLAY AND ALSO DO NOT FORGET TO PUT NG-CLOCK IN THE HTML TAG  */
+		[ng\:clock], [ng-cloak], .ng-cloak{
+			display: none;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+<div>
+	<h4 ng-controller='controllerOne'>First Random Number : {{randomNumber1}}</h4>
+	<h4 ng-controller='controllerOne'>Second Random Number : {{randomNumber2}}</h4>
+	<br>
+	<br>
+	<br>
+	<br>
+	<!-- Same thing as above but different controllers -->
+	<h1 ng-controller='goodEmotions'>I am Feeling <span style="text-decoration: underline;">{{good}}</span></h1>
+	<br>
+	<br>
+	<h1 ng-controller='badEmotions'>I am Feeling <span style="text-decoration: underline;">{{bad}}</span></h1>
+	<br>
+	<br>
+	<h1 ng-controller='greatController'>Ok <span style="text-decoration: underline;">{{get}}</span></h1>
+</div>
+
+
+<script type="text/javascript" src="angular.js"></script>
+</body>
+</html>

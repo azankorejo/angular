@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app='app1' ng-cloak>
+<head>
+	<title>Angular Js Turtorial</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+	<style type="text/css">
+		[ng\:cloak],[ng-cloak],.ng-cloak{
+			display: none;
+		}
+	</style>
+<div ng-controller='controllerOne'>
+	<label>Here to Search For :</label>
+	<input type="text" ng-model='heroName'>
+	<br>
+	<br>
+	<button ng-click='getHeroData()'>Submit</button>
+	<br>
+	<br>
+	{{heroData}}
+
+</div>
+<div ng-controller='controllerOne'>
+	<label >Hero Name</label>
+	<input type="text" ng-model='heroName' name="">
+	<label >Real Name</label>
+	<input type="text" ng-model='realName' name="">
+	<button ng-click='addHeroData(heroName,realName)'>Add Hero</button>
+
+	<br>
+	<br>
+	<ul style="list-style: none;font-family: sans-serif;">
+		<li ng-repeat-start='item in hero'>Hero Name : {{item.heroName}}<hr></li>
+
+		<li ng-repeat-end='item in hero'>Real Name : {{item.realName}} <hr></li>
+	</ul>
+</div>
+
+
+<script type="text/javascript" src="angular.js"></script>
+</body>
+</html>

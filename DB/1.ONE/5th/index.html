@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app='app1' ng-clock >
+<head>
+	<title>Angular Js Turtorial 2</title>
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+		}
+
+		/* NG-CLOCK IS USED FOR THE CURLY BRACKETS SHOWING WHEN REFRESHING TO NOT DISPLAY AND ALSO DO NOT FORGET TO PUT NG-CLOCK IN THE HTML TAG  */
+		[ng\:clock], [ng-cloak], .ng-cloak{
+			display: none;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+	<style type="text/css">
+		.bluetext{
+			color: blue;
+		}
+		.boldtext{
+			font-weight: bolder;
+		}
+		.stripedBLue{
+			background: lightblue;
+			color: white;
+			font-weight: 600;
+		}
+		.stripedRed{
+			background: red;
+			color: white;
+			font-weight: 600;
+		}		
+	</style>
+	<!-- EVENTS -->
+
+<div ng-controller='controllerOne'>
+	<hr>
+	<h3>Check/Uncheck Button</h3>
+	<p>
+		<button ng-disabled='disableButton'>Button</button>
+	</p>			
+	<label>
+		<input type="checkbox" ng-model='disableButton' ng-model='textChange'>
+	</label>
+	<p ng-if='disableButton'>Unselect checkbox to enable button</p>
+	<p ng-if='!disableButton'>Unselect checkbox to Disable button</p>
+	<hr>
+
+
+
+	<br>
+	<!-- HIDE AND SHOW THINGS -->
+	<h5>HIDE AND SHOW THINGS</h5>
+	<p>
+		<input type="checkbox" ng-model='dayTimeButton'>
+	</p>
+	<h3 ng-hide='!dayTimeButton'>Good Morning</h3>
+	<h3 ng-hide='dayTimeButton'>Good Night</h3>
+
+	<hr>
+	<br>
+	<br>
+	<br>
+
+
+	<!-- Ng-class Example -->
+	<hr>
+	<h4>ng-class example</h4>
+	<p>
+		<select ng-model='textStyling'>
+			<option value="bluetext">Blue Text</option>
+			<option value="boldtext">Bold Text</option>
+		</select>
+	</p>
+	<p ng-class='textStyling'>Some Random Text</p>
+	<hr>
+
+
+	<br>
+	<br>
+	<h4>ng-class even/odd example</h4>
+	<table border="7px">
+		<tr ng-repeat='item in capitals' ng-class-even="'stripedRed'" ng-class-odd="'stripedBLue'">
+			<td>{{item.city}}</td>
+			<td>{{item.state}}</td>
+		</tr>
+	</table>
+	<hr>
+
+</div>
+
+
+<script type="text/javascript" src="angular.js"></script>
+</body>
+</html>

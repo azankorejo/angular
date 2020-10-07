@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app='app1' ng-cloak>
+<head>
+	<title>Angular Js Turtorial</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+	<style type="text/css">
+		[ng\:cloak],[ng-cloak],.ng-cloak{
+			display: none;
+		}
+	</style>
+<div ng-controller='controllerOne as parent'>
+	<p>Name : {{parent.name}}</p>
+	<p>Sound : {{parent.sound}}</p>
+	<button ng-click='parent.animalClick()'>Click</button>
+</div>
+<div ng-controller='controllerTwo as data'>
+	<p>Name : {{data.child.name}}</p>
+	<p>Sound : {{data.child.sound}}</p>
+	<button ng-click='data.child.animalClick()'>Dog Data</button>
+	<button ng-click='data.child.dogData()'>more dog data</button>
+
+	<br>
+	<input type="text" ng-model='data.child.bark'>
+	<span>New Bark : {{data.child.bark}}</span>
+</div>
+
+
+
+<script type="text/javascript" src="angular.js"></script>
+</body>
+</html>

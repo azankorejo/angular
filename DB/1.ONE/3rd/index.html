@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app='app1' ng-clock >
+<head>
+	<title>Angular Js Turtorial 2</title>
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+		}
+
+
+
+		/* NG-CLOCK IS USED FOR THE CURLY BRACKETS SHOWING WHEN REFRESHING TO NOT DISPLAY AND ALSO DO NOT FORGET TO PUT NG-CLOCK IN THE HTML TAG  */
+		[ng\:clock], [ng-cloak], .ng-cloak{
+			display: none;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+<div id="groceryList" ng-controller='controllerOne'>
+	<h3 class="listTitle">{{groceries.length}} Groceries To Get</h3>
+	<ol style="margin:  0 0 -13px 0">
+		<li>{{groceries[0].item}}</li>
+	</ol>
+<br>
+<br>
+<br>
+	<ol start="2">
+		<li ng-repeat='grocery in groceries' ng-if='$index > 0'>{{grocery.item}} {{$index}}</li>
+	</ol>
+
+	<table >
+		<tr ng-repeat-start='grocery in groceries'>
+			<td>{{grocery.item}}</td>
+		</tr>
+		<tr ng-repeat-end='grocery in groceries'>
+			<td ng-if='grocery.purchased' style="color: green;font-weight: bold;">Bought <hr></td>
+			<td ng-if='!grocery.purchased' style="color: red;font-weight: bold;">Not Bought Yet!<hr></td>
+
+		</tr>
+	</table>
+
+
+	<!-- TWO WAY DATA BIDING EXAMPLE -->
+	<input type="text" ng-model="groceries[2].item">
+
+
+	<br>
+	<br>
+	<br>
+	<!-- including external files -->
+
+	<h3>Including Data</h3>
+
+	<div ng-include="'grocerieslist.html'"></div>
+
+	<label>
+		<input type="checkbox" ng-model='showList'>
+		Show Unordered List
+	</label>
+
+	<ng-include src='getList()'></ng-include>
+
+	<br>
+	<br>
+	<br>
+
+	<label>
+		Type a Number From 1 to 5 : 
+		<input type="number" placeholder="Type a Number" ng-model='numberChange'>
+	</label>
+	<div ng-switch='numberChange'>
+		<p ng-switch-when='1'>You entered 1</p>
+		<p ng-switch-when='2'>You entered 2</p>
+		<p ng-switch-when='3'>You entered 3</p>
+		<p ng-switch-when='4'>You entered 4</p>
+		<p ng-switch-when='5'>You entered 5</p>
+		<p ng-switch-default='1'>You Are not Following Directions</p>
+	</div>
+
+</div>
+
+
+<script type="text/javascript" src="angular.js"></script>
+</body>
+</html>

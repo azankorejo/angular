@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app='app1'>
+<head>
+	<title>Angular Js Turtorial</title>
+</head>
+<body>
+	<style type="text/css">
+		*{
+			font-family: sans-serif;
+		}
+	</style>
+<div ng-controller='mainController'>
+	<input type="text" ng-model='userName'>
+	<button ng-click='greetUser(userName)'>Click</button>
+
+	<br>
+	<br>
+	<h1>LOCATION SERVICE</h1>
+
+	URL  : {{currentURL}}<br><br>
+
+	Protocol  : {{theProtocol}}<br><br>
+
+	Host  : {{currentHost}}<br><br>
+
+	Port  : {{currentPort}}<br><br>
+
+	Path  : {{currentPath}}<br><br>
+
+	Search  : {{currentSearch}}<br><br>
+	
+	<h1>INTERVAL SERVICE</h1>
+	Current TIme {{time}}
+	<br>
+	<br>
+	<br>
+	<h1>LOG SERVICE</h1>
+	<label>Console Messages&nbsp;:&nbsp;
+		<input type="text" ng-model='message'>
+	</label>
+	<button ng-click='$log.log(message)'>LOG</button>
+	<button ng-click='$log.warn(message)'>WARN</button>
+	<button ng-click='$log.info(message)'>INFO</button>
+	<button ng-click='$log.error(message)'>ERROR</button>
+	<button ng-click='$log.debug(message)'>DEBUG</button>
+
+	<br>
+	<br>
+	<h1>EXCEPTIONAL HANDLER SERVICE</h1>
+	<button ng-click='throwException()'>Throw</button>
+	<br>
+	<br>
+	<br>
+	<h1>SANITIZE HTML FOR SECURITY</h1>
+	<input type="text" ng-model='badStuff'>
+	<span>{{badStuff}}</span>
+	<span ng-bind-html='badStuff'>{{badStuff}}</span>
+	<span ng-bind='badStuff'>{{badStuff}}</span>
+	<br>
+	<br>
+	<br>
+	<br>
+	<h1>COMPILE FUNCTION</h1>
+	<p get-player-info></p>
+
+
+
+</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-sanitize.js"></script>
+
+<script type="text/javascript" src="angular.js"></script>
+</body>
+</html>

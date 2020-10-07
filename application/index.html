@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+
+<head>
+	<title>AngularJs Application</title>
+</head>
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<body ng-controller='mainController'>
+
+<div class="header">
+	<div class="content">
+		<nav class="pb-2 row" ng-cloak>
+			<div class="pt-2 pl-5  col-lg-6 mr-auto">
+				<h3 class="pt-2"><a class="text-decoration-none text-primary" href="/home.html">{{appName}}</a></h3>
+			</div>
+			<div class="pt-3 text-center col-lg-6 ">
+				<ul class="list-unstyled d-flex">
+					<li ng-repeat='item in data' class="px-4"><a class="text-decoration-none text-white" href="'{{item.url}}'">{{item.name}}</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<div class="img-showcase">
+		<img src="assets/files/showcase.jpg" width="100%" class="showcase-img img-fluid">
+	</div>
+	<div class="showcase-img-content showcase">
+		<h1 class="text-white display-2 font-weight-bold shadow-lg">AngularJs</h1>
+		<h1 class="text-white display-3 font-weight-bold shadow-lg">Website....</h1>
+		<br>
+		<div class="buttonAdd">
+			<button id="btnChange" ng-click="toggleBtn($event)" ng-show='trueVal' class="btn btn-primary btn-lg">Call To Action</button>
+			<button id="btnChange" ng-click="toggleBtn($event)" ng-show='!trueVal' class="btn btn-info btn-lg">Call To Action</button>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="assets/js/angular.min.js"></script>
+<script type="text/javascript" src="assets/js/angular.my.js"></script>
+<script type="text/javascript" src="assets/js/jquery.js"></script>
+<script type="text/javascript" src="assets/js/popper.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app='app1' ng-cloak>
+<head>
+	<title>Angular Js Turtorial</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+	<style type="text/css">
+		[ng\:cloak],[ng-cloak],.ng-cloak{
+			display: none;
+		}
+	</style>
+<div style="font-family: sans-serif;font-size: 1.2222rem" ng-controller='mainCtrl'>
+	<label>Make Uppercase :</label>
+	<input type="text" ng-model="name">
+	<p>Uppercase : {{name | uppercase}}</p>
+	<p>Lowercase : {{name | lowercase}}</p>
+
+	<br>
+
+	<label>Currency Filter :</label>
+	<input type="text" ng-model="money">
+	<p>Currency : {{money | currency}}</p>
+
+	<br>
+	<br>
+
+	<ul>
+		<li ng-repeat="student in student.gpa | filter:studentName| orderBy:'-gpa'">
+			Name : {{student.name}}&nbsp; Gpa : {{student.gpa}}
+		</li>
+	</ul>
+
+
+	<br>
+	<br>
+		
+	<label style="font-weight: bold">Number Filter :</label>
+	<input type="text" ng-model="numVal">
+	<p>Default : {{numVal | number}}</p>	
+	<p>No Fractions : {{numVal | number:0}}</p>	
+	<p>Negative 4 Decimal : {{-numVal | number:4}}</p>	
+
+	<br>
+	<br>
+	<br>
+	<h4>Date Filters</h4>
+	<p>Date Default : {{currDate | date:'medium'}}</p>
+	<p>Date Edited : {{currDate | date:"MM/dd/yy 'at' h:mma"}}</p>
+	<br>
+	<br>
+	<h4>Random Text</h4>
+	<p>Default String : {{randomStr}}</p>
+	<p>String Edited (only 10 characters would be displayed): {{randomStr | limitTo:10}}</p>
+	<br>
+	<h4>Random array</h4>
+	<ul>
+		<li ng-repeat='item in randomArray | limitTo:3'>{{item}}</li>
+	</ul>
+	<br>
+	<h4>Custom Filter</h4>
+	<ul>
+		<li ng-repeat='item in weather'>
+			{{item.day+' : '}} {{item.rain | raining}}
+		</li>
+	</ul>
+
+</div>
+
+
+
+<script type="text/javascript" src="angular.js"></script>
+<script type="text/javascript" src="filters.js"></script>
+</body>
+</html>

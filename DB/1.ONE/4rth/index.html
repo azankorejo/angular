@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app='app1' ng-clock >
+<head>
+	<title>Angular Js Turtorial 2</title>
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+		}
+
+		/* NG-CLOCK IS USED FOR THE CURLY BRACKETS SHOWING WHEN REFRESHING TO NOT DISPLAY AND ALSO DO NOT FORGET TO PUT NG-CLOCK IN THE HTML TAG  */
+		[ng\:clock], [ng-cloak], .ng-cloak{
+			display: none;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+	<!-- EVENTS -->
+
+<div ng-controller='controllerOne'>
+	<div>
+		<h3>Blur Events : {{blur}}</h3>
+		<input type="text" ng-blur='blur = blur + 1'>
+	</div>
+	<div>
+		<h3>click Events : {{click}}</h3>
+		<input type="text" ng-click='click = click + 1'>
+	</div>
+	<div>
+		<h3>dblclick Events : {{dblclick}}</h3>
+		<input type="text" ng-dblclick='dblclick = dblclick + 1'>
+	</div>
+	<div>
+		<h3>copy Events : {{copy}}</h3>
+		<input type="text" ng-copy='copy = copy + 1'>
+	</div>
+	<div>
+		<h3>paste Events : {{paste}}</h3>
+		<input type="text" ng-paste='paste = paste + 1'>
+	</div>
+	<div>
+		<h3>cut Events : {{cut}}</h3>
+		<input type="text" ng-cut='cut = cut + 1'>
+	</div>
+	<div>
+		<h3>focus Events : {{focus}}</h3>
+		<input type="text" ng-focus='focus = focus + 1'>
+	</div>
+<!-- 	<div>
+		<h3>model Events : {{model}}</h3>
+		<input type="text" ng-model='confirmed'>
+	</div>
+-->
+<!-- CHANGE NOT WORKING FOR NOW -->
+<!--
+	<div>
+		<h3>change Events : {{change}}</h3>
+		<input type="text" ng-change='change = change + 1'>
+	</div> -->
+	<div>
+		<h3>keydown Events : {{kdKey}}</h3>
+		<input type="text" ng-keydown='keydown($event)'>
+	</div>
+	<div>
+		<h3>mouseenter Events : {{mouseenter}}</h3>
+		<input type="text" ng-mouseenter='mouseenter = mouseenter + 1'>
+	</div>
+	<div>
+		<h3>mouseleave Events : {{mouseleave}}</h3>
+		<input type="text" ng-mouseleave='mouseleave = mouseleave + 1'>
+	</div>										
+</div>
+
+
+<script type="text/javascript" src="angular.js"></script>
+</body>
+</html>
